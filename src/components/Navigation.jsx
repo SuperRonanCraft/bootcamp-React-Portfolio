@@ -1,5 +1,7 @@
-import { Container, Nav, Navbar, NavbarBrand } from 'react-bootstrap';
+import { Button } from './ui/button';
+import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import NavItem from './NavItem';
+import { Menu } from 'lucide-react';
 
 const navlinks = [
   { title: 'About Me', link: '/' },
@@ -10,17 +12,28 @@ const navlinks = [
 
 function Navigation() {
   return (
-    <Navbar expand="lg">
-      <Container>
-        <Navbar.Brand>
-          <h1>My React Portfolio</h1>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className="ml-auto" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">{navlinks.map((item) => NavItem(item))}</Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <div className="px-4 py-2">
+      <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+        {navlinks.map((item) => (
+          <NavItem key={item.link} {...item} />
+        ))}
+      </nav>
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button variant="outline" size="icon" className="shrink-0 md:hidden">
+            <Menu className="h-5 w-5" />
+            <span className="sr-only">Toggle navigation menu</span>
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="left">
+          <nav className="grid gap-6 text-lg font-medium">
+            {navlinks.map((item) => (
+              <NavItem key={item.link} {...item} />
+            ))}
+          </nav>
+        </SheetContent>
+      </Sheet>
+    </div>
   );
 }
 
