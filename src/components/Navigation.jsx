@@ -12,7 +12,7 @@ const navlinks = [
 
 function Navigation() {
   return (
-    <div className="px-4 py-2">
+    <div>
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         {navlinks.map((item) => (
           <NavItem key={item.link} {...item} />

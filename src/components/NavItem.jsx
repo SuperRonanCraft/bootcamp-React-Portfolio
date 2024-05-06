@@ -10,7 +10,7 @@ function NavItem({ title, link }) {
       to={link}
       className={`flex items-center gap-2 text-lg font-semibold md:text-base ${
         window.location.pathname === link
-          ? 'text-black'
+          ? ''
           : 'text-gray-500 hover:text-red-500'
       }`}
     >
