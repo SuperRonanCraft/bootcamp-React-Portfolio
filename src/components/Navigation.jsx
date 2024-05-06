@@ -4,16 +4,15 @@ import NavItem from './NavItem';
 import { Menu } from 'lucide-react';
 
 const navlinks = [
-  { title: 'About Me', link: '/' },
-  { link: 'Porfolio' },
-  { link: 'Contact' },
-  { link: 'Resume' },
+  { title: 'Portfolio', link: '/' },
+  { title: 'Contact', link: '/contact' },
+  { title: 'Resume', link: '/resume' },
 ];
 
 function Navigation() {
   return (
     <div>
-      <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+      <nav className="hidden flex-col font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         {navlinks.map((item) => (
           <NavItem key={item.link} {...item} />
         ))}

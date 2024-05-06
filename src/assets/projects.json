@@ -1,9 +1,7 @@
-{
-  "projects": [
-    {
-      "title": "Test",
-      "link": "https://",
-      "image": ""
-    }
-  ]
-}
+[
+  {
+    "title": "Test",
+    "link": "https://",
+    "image": ""
+  }
+]

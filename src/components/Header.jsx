@@ -3,10 +3,12 @@ import { Moon, Sun } from 'lucide-react';
 
 function Header({ darkmode, darkModeHandler }) {
   return (
-    <div className="flex flex-row px-4 py-2 ">
+    <div className="grid grid-cols-3 gap-4 px-4 pt-3 pb-2 content-center bg-gray-200 dark:bg-gray-800">
       <Navigation />
-      <h1 className="mx-auto text-lg font-bold">Alains React Portfolio</h1>
-      <button className="hover:text-red-500" onClick={() => darkModeHandler()}>
+      <h1 className="text-nowrap text-center mx-auto text-lg font-bold">
+        Alains React Portfolio
+      </h1>
+      <button className="justify-self-end" onClick={() => darkModeHandler()}>
         {darkmode && <Moon size={32} />}
         {!darkmode && <Sun size={32} />}
       </button>

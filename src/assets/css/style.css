@@ -73,8 +73,15 @@
   body {
     @apply bg-background text-foreground;
   }
+  svg,
+  nav a:not(.active),
+  h1 {
+    @apply transition-colors duration-300 hover:text-red-500;
+  }
 }
 
-body * {
-  @apply transition-colors duration-300 delay-0;
-}
+/* @layer utilities {
+  body * {
+    @apply transition-colors duration-300 delay-0;
+  }
+} */
