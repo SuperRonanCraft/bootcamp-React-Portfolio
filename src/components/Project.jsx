@@ -15,22 +15,30 @@ function Project({ title, github, deployment, image, description }) {
       className="project group"
       style={{ backgroundImage: `url(./images/${image})` }}
     >
-      <div className="invisible group-hover:visible opacity-0 hover:opacity-100 rounded-md border bg-gray-900/90 transition duration-300">
+      <div className="opacity-90 hover:opacity-100 rounded-md border bg-gray-100/90 dark:bg-gray-900/90 transition duration-300 w-full">
         <CardHeader className="">
-          <CardTitle className="text-center">{title}</CardTitle>
+          <CardTitle className="text-center">
+            <h2>{title}</h2>
+          </CardTitle>
+          {/* Quick Links */}
           <div className="flex flex-col-2 justify-center gap-4 py-3">
             <a className="has-tooltip" href={github}>
-              <span className="tooltip rounded shadow-lg p-1 bg-gray-900 text-red-500 -mt-8">
-                Github Repo
+              <span className="tooltip rounded shadow-lg p-1 bg-gray-100 dark:bg-gray-900 text-red-500 -mt-8">
+                Github Repository
               </span>
               <Github size={24} className="hover:text-red-500" />
             </a>
-            <a href={deployment}>
+            <a className="has-tooltip" href={deployment}>
+              <span className="tooltip rounded shadow-lg p-1 bg-gray-100 dark:bg-gray-900 text-red-500 -mt-8">
+                Deployment
+              </span>
               <Server size={24} className="hover:text-red-500" />
             </a>
           </div>
         </CardHeader>
-        <CardDescription className="mx-2 text-justify">
+
+        {/* Description */}
+        <CardDescription className="mx-2 text-center text-md">
           {description}
         </CardDescription>
         <CardContent className="grid gap-4"></CardContent>

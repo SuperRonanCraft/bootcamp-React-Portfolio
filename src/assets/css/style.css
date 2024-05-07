@@ -83,12 +83,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 300px;
+  min-height: 250px;
   display: flex;
 }
 
 .tooltip {
-  @apply invisible absolute border border-lg;
+  @apply invisible absolute rounded-md border;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
