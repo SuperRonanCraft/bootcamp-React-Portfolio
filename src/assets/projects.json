@@ -4,7 +4,8 @@
     "description": "An Express and SQL webapp to manage food inventory and allow online shopping/orders for customers",
     "github": "https://github.com/SuperRonanCraft/bootcamp-Arlington-Food-Shelf",
     "deployment": "https://bootcamp-arlington-food-shelf.onrender.com/",
-    "image": "arlingtonfoodshelf.png"
+    "image": "arlingtonfoodshelf.png",
+    "techlist": ["mongoose"]
   },
   {
     "title": "Movie Mania",

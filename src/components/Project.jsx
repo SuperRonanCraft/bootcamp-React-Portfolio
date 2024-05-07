@@ -9,7 +9,7 @@ import {
 import { Github, Server } from 'lucide-react';
 
 // eslint-disable-next-line react/prop-types
-function Project({ title, github, deployment, image, description }) {
+function Project({ title, github, deployment, image, description, techlist }) {
   return (
     <Card
       className="project group"
@@ -38,8 +38,11 @@ function Project({ title, github, deployment, image, description }) {
         </CardHeader>
 
         {/* Description */}
-        <CardDescription className="mx-2 text-center text-md">
-          {description}
+        <CardDescription className="mx-2 text-center text-md text-gray-900 dark:text-gray-200">
+          <a>{description}</a>
+          <div>
+            {techlist?.map(tech => ()) || ''}
+          </div>
         </CardDescription>
         <CardContent className="grid gap-4"></CardContent>
         <CardFooter></CardFooter>
