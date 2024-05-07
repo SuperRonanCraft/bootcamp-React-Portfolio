@@ -1,5 +1,6 @@
 import projects from '../assets/projects.json';
 import Project from '../components/Project';
+import Skills from '../components/Skills';
 function AboutPage() {
   console.log(projects);
   return (
@@ -7,6 +8,7 @@ function AboutPage() {
       {projects.map((project, index) => (
         <Project key={index} {...project} />
       ))}
+      <Skills />
     </div>
   );
 }

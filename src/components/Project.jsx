@@ -40,9 +40,9 @@ function Project({ title, github, deployment, image, description, techlist }) {
         {/* Description */}
         <CardDescription className="mx-2 text-center text-md text-gray-900 dark:text-gray-200">
           <a>{description}</a>
-          <div>
+          {/* <div>
             {techlist?.map(tech => ()) || ''}
-          </div>
+          </div> */}
         </CardDescription>
         <CardContent className="grid gap-4"></CardContent>
         <CardFooter></CardFooter>
