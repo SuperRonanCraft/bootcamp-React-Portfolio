@@ -7,6 +7,11 @@ module.exports = {
     './app/**/*.{js,jsx}',
     './src/**/*.{js,jsx}',
   ],
+  variants: {
+    extend: {
+      display: ['group-hover'],
+    },
+  },
   prefix: '',
   theme: {
     container: {

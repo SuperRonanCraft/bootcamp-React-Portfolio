@@ -71,17 +71,34 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground bg-gray-300;
   }
   svg,
-  nav a:not(.active),
-  h1 {
+  nav a:not(.active) {
     @apply transition-colors duration-300 hover:text-red-500;
   }
 }
 
-/* @layer utilities {
-  body * {
-    @apply transition-colors duration-300 delay-0;
-  }
-} */
+.project {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  display: flex;
+}
+
+.tooltip {
+  @apply invisible absolute border border-lg;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-wrap: nowrap;
+}
+
+.has-tooltip {
+  position: relative;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
