@@ -14,6 +14,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+//Zod's API for forms
 const formSchema = z.object({
   name: z.string().min(2, {
     message: 'Name must be atleast 2 characters long.',
@@ -24,13 +25,12 @@ const formSchema = z.object({
 });
 
 function Contact() {
-  //Form Schema
+  //Form effect
   const form = useForm({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      first: '',
-      last: '',
-    },
+    // defaultValues: {
+    //   name: '',
+    // },
   });
 
   //Form Submit Event
@@ -39,7 +39,10 @@ function Contact() {
   }
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-8 mx-auto px-2 w-full md:w-5/6 bg-gray-400 border rounded-md"
+      >
         <FormField
           control={form.control}
           name="name"
