@@ -11,7 +11,6 @@ function updateDark(dark) {
 }
 
 function App() {
-  console.log({ test: true, test2: localStorage.getItem('dark') });
   const [dark, setDark] = useState(localStorage.getItem('dark') === 'true');
 
   const darkModeHandler = () => {
