@@ -5,26 +5,37 @@
     "github": "https://github.com/SuperRonanCraft/bootcamp-Arlington-Food-Shelf",
     "deployment": "https://bootcamp-arlington-food-shelf.onrender.com/",
     "image": "arlingtonfoodshelf.png",
-    "tech": ["mongoose", "sql", "bootstrap"]
+    "tech": ["mongo", "mysql", "bootstrap", "html"]
   },
   {
-    "title": "Movie Mania",
-    "description": "A small Movie title search engine",
-    "github": "https://github.com/SuperRonanCraft/bootcamp-project-1",
-    "deployment": "https://superronancraft.github.io/bootcamp-project-1/",
-    "image": "moviemania.png"
+    "title": "Weather App",
+    "description": "A simple Weather fetching webapp using the OpenWeatherMap API",
+    "github": "https://github.com/SuperRonanCraft/bootcamp-Weather-Dashboard",
+    "deployment": "https://superronancraft.github.io/bootcamp-Weather-Dashboard/",
+    "image": "weather.png",
+    "tech": ["js", "css", "html"]
   },
   {
     "title": "BetterRTP - Minecraft Plugin",
     "description": "A /wild random teleportation plugin for Minecraft using the Spigot API",
     "github": "https://github.com/RonanPlugins/BetterRTP",
     "deployment": "https://www.spigotmc.org/resources/betterrtp.36081/",
-    "image": "rtp.png"
+    "image": "rtp.png",
+    "tech": ["java"]
   },
   {
     "title": "Exmployee Tracker",
     "description": "A simple terminal based Employee tracker with relational SQL database",
     "github": "https://github.com/SuperRonanCraft/bootcamp-Employee-Tracker",
-    "image": "etracker.png"
+    "image": "etracker.png",
+    "tech": ["js", "node", "npm", "postgres"]
+  },
+  {
+    "title": "Movie Mania",
+    "description": "A small Movie title search engine",
+    "github": "https://github.com/SuperRonanCraft/bootcamp-project-1",
+    "deployment": "https://superronancraft.github.io/bootcamp-project-1/",
+    "image": "moviemania.png",
+    "tech": ["css", "html", "github", "node"]
   }
 ]

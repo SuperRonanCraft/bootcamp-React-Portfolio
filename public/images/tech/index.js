@@ -31,6 +31,11 @@ export default [
     name: 'HTML 5',
   },
   {
+    id: 'java',
+    url: 'java.svg',
+    name: 'Java',
+  },
+  {
     id: 'js',
     url: 'javascript.svg',
     name: 'JavaScript',

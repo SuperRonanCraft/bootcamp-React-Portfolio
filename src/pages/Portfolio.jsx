@@ -1,6 +1,6 @@
 import projects from '../assets/projects.json';
 import Project from '../components/Project';
-import Skills from '../components/Skills';
+import { Skills } from '../components/Skills';
 function AboutPage() {
   console.log(projects);
   return (

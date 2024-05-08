@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="h-screen flex flex-col justify-between dark:bg-gray-600">
       <Header darkmode={dark} darkModeHandler={darkModeHandler} />
-      <main>
+      <main className="dark:bg-gray-600">
         <Outlet />
       </main>
       <Footer />
