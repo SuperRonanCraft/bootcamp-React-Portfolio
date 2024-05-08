@@ -102,3 +102,7 @@
 .has-tooltip:hover .tooltip {
   @apply visible z-50;
 }
+
+h2 {
+  @apply text-2xl font-semibold;
+}

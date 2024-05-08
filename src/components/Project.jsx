@@ -9,7 +9,7 @@ import {
 import { Github, Server } from 'lucide-react';
 
 // eslint-disable-next-line react/prop-types
-function Project({ title, github, deployment, image, description, techlist }) {
+function Project({ title, github, deployment, image, description, tech }) {
   return (
     <Card
       className="project group"
@@ -28,21 +28,21 @@ function Project({ title, github, deployment, image, description, techlist }) {
               </span>
               <Github size={24} className="hover:text-red-500" />
             </a>
-            <a className="has-tooltip" href={deployment}>
-              <span className="tooltip rounded shadow-lg p-1 bg-gray-100 dark:bg-gray-900 text-red-500 -mt-8">
-                Deployment
-              </span>
-              <Server size={24} className="hover:text-red-500" />
-            </a>
+            {deployment && (
+              <a className="has-tooltip" href={deployment}>
+                <span className="tooltip rounded shadow-lg p-1 bg-gray-100 dark:bg-gray-900 text-red-500 -mt-8">
+                  Deployment
+                </span>
+                <Server size={24} className="hover:text-red-500" />
+              </a>
+            )}
           </div>
         </CardHeader>
 
         {/* Description */}
         <CardDescription className="mx-2 text-center text-md text-gray-900 dark:text-gray-200">
           <a>{description}</a>
-          {/* <div>
-            {techlist?.map(tech => ()) || ''}
-          </div> */}
+          <div>{tech}</div>
         </CardDescription>
         <CardContent className="grid gap-4"></CardContent>
         <CardFooter></CardFooter>

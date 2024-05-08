@@ -5,7 +5,7 @@
     "github": "https://github.com/SuperRonanCraft/bootcamp-Arlington-Food-Shelf",
     "deployment": "https://bootcamp-arlington-food-shelf.onrender.com/",
     "image": "arlingtonfoodshelf.png",
-    "techlist": ["mongoose"]
+    "tech": ["mongoose", "sql", "bootstrap"]
   },
   {
     "title": "Movie Mania",
@@ -20,5 +20,11 @@
     "github": "https://github.com/RonanPlugins/BetterRTP",
     "deployment": "https://www.spigotmc.org/resources/betterrtp.36081/",
     "image": "rtp.png"
+  },
+  {
+    "title": "Exmployee Tracker",
+    "description": "A simple terminal based Employee tracker with relational SQL database",
+    "github": "https://github.com/SuperRonanCraft/bootcamp-Employee-Tracker",
+    "image": "etracker.png"
   }
 ]
