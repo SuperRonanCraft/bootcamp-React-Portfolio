@@ -1,11 +1,13 @@
 import { Form } from '../components/ui/form';
 import { Button } from '../components/ui/button';
+import React, { useCallback, useState } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import ContactArea from '../components/ContactField';
+import { useEffect } from 'react';
 
 //Zod's API for forms
 const formSchema = z.object({
@@ -53,19 +55,29 @@ function Contact() {
   });
 
   //Form Submit Event
-  function onSubmit(values) {
+  const onSubmit = (values) => {
     console.log(values);
-  }
+  };
+
+  const resetAsyncForm = useCallback(async () => {
+    console.log('Reset Form!');
+    form.reset(); // asynchronously reset your form values
+  }, [form]);
+
+  useEffect(() => {
+    resetAsyncForm();
+  }, [form.formState, resetAsyncForm, form.reset]);
+
   return (
-    <Form {...form}>
+    <Form {...form} className="">
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 mx-auto px-2 py-2 w-full md:w-5/6 bg-gray-400 dark:bg-gray-800 border rounded-md"
+        className="mx-5 md:mx-auto md:w-5/6 space-y-8 px-2 py-2 bg-gray-400 dark:bg-gray-800 border rounded-md"
       >
         {formFields.map((field, index) => (
           <ContactArea key={index} {...field} form={form} />
         ))}
-        <Button type="submit" className="w-full">
+        <Button type="submit" className="">
           Submit
         </Button>
       </form>

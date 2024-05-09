@@ -21,7 +21,7 @@
     "github": "https://github.com/RonanPlugins/BetterRTP",
     "deployment": "https://www.spigotmc.org/resources/betterrtp.36081/",
     "image": "rtp.png",
-    "tech": ["java"]
+    "tech": ["java", "maven"]
   },
   {
     "title": "Exmployee Tracker",
@@ -36,6 +36,6 @@
     "github": "https://github.com/SuperRonanCraft/bootcamp-project-1",
     "deployment": "https://superronancraft.github.io/bootcamp-project-1/",
     "image": "moviemania.png",
-    "tech": ["css", "html", "github", "node"]
+    "tech": ["css", "html", "node"]
   }
 ]

@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import { SheetClose } from './ui/sheet';
 
 // eslint-disable-next-line react/prop-types
 function NavItem({ title, link }) {

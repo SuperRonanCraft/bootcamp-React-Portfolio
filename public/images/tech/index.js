@@ -46,6 +46,11 @@ export default [
     name: 'Materialize',
   },
   {
+    id: 'maven',
+    url: 'maven.svg',
+    name: 'Maven',
+  },
+  {
     id: 'mongo',
     url: 'mongodb.svg',
     name: 'MongoDB',
