@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
-
 export const FrameWrapper = ({ html }) => {
   return (
     <div className="my-2">

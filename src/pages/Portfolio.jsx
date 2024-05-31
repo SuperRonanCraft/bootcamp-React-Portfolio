@@ -1,8 +1,8 @@
-import projects from '../assets/projects.json';
-import Project from '../components/Project';
-import { Skills } from '../components/Skills';
+import projects from "../assets/projects.json";
+import Project from "../components/Project";
+import { Skills } from "../components/Skills";
 function AboutPage() {
-  console.log(projects);
+  // console.log(projects);
   return (
     <div>
       {/* About */}
@@ -11,11 +11,11 @@ function AboutPage() {
           <div className="px-6 py-4">
             <h2 className="text-2xl font-bold mb-2 ">Hello, I'm Alain</h2>
             <p className="text-base">
-              A dedicated software engineer-in-training with a flair for
-              crafting innovative web applications and game modifications.
-              Currently enrolled in a rigorous software engineering bootcamp,
-              I'm honing my skills in various technologies while exploring the
-              realms of web development and game design.
+              A dedicated Full Stack Web Developer with a flair for crafting
+              innovative web applications using the latest technologies. Just
+              gradutaed from a rigorous web developement bootcamp. Honing my
+              skills in various technologies while exploring the realms of UI/UX
+              and backend platforms.
             </p>
             <p className="text-base mt-2">
               With a diverse portfolio ranging from intricate mods for games to
@@ -30,7 +30,7 @@ function AboutPage() {
               production environments, finding fulfillment in the impact of my
               work as it becomes part of users' everyday experiences. With a
               keen eye for detail and a relentless drive for innovation, I'm
-              poised to make waves in the ever-evolving landscape of software
+              poised to make waves in the ever-evolving landscape of web
               development.
             </p>
           </div>

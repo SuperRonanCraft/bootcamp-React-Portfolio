@@ -1,11 +1,19 @@
 [
   {
+    "title": "Ronan Plugins",
+    "description": "An Express/MongoDB RESTful API allowing users to upload their resources and images for others to download and enjoy",
+    "github": "https://github.com/RonanPlugins/RonanPluginsFrontend",
+    "deployment": "https://ronanplugins.com",
+    "image": "ronanplugins.png",
+    "tech": ["mongo", "mysql", "tailwind"]
+  },
+  {
     "title": "Arlington Food Shelf",
     "description": "An Express and SQL webapp to manage food inventory and allow online shopping/orders for customers",
     "github": "https://github.com/SuperRonanCraft/bootcamp-Arlington-Food-Shelf",
     "deployment": "https://bootcamp-arlington-food-shelf.onrender.com/",
     "image": "arlingtonfoodshelf.png",
-    "tech": ["mongo", "mysql", "bootstrap", "html"]
+    "tech": ["mongo", "mysql", "bootstrap"]
   },
   {
     "title": "Weather App",
@@ -13,7 +21,7 @@
     "github": "https://github.com/SuperRonanCraft/bootcamp-Weather-Dashboard",
     "deployment": "https://superronancraft.github.io/bootcamp-Weather-Dashboard/",
     "image": "weather.png",
-    "tech": ["js", "css", "html"]
+    "tech": ["js", "css"]
   },
   {
     "title": "BetterRTP - Minecraft Plugin",
