@@ -1,11 +1,11 @@
 [
   {
-    "title": "Ronan Plugins",
-    "description": "An Express/MongoDB RESTful API allowing users to upload their resources and images for others to download and enjoy",
+    "title": "Mine Central",
+    "description": "An Express/MongoDB RESTful API allowing users to upload their resources and images for others to download and browse their creations",
     "github": "https://github.com/RonanPlugins/RonanPluginsFrontend",
-    "deployment": "https://ronanplugins.com",
+    "deployment": "https://minecentral.net",
     "image": "ronanplugins.png",
-    "tech": ["mongo", "mysql", "tailwind"]
+    "tech": ["mongo", "mysql", "tailwind", "typescript"]
   },
   {
     "title": "Arlington Food Shelf",
