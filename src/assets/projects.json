@@ -1,6 +1,6 @@
 [
   {
-    "title": "Mine Central",
+    "title": "Minecentral",
     "description": "An Express/MongoDB RESTful API allowing users to upload their resources and images for others to download and browse their creations",
     "github": "https://github.com/RonanPlugins/RonanPluginsFrontend",
     "deployment": "https://minecentral.net",
@@ -24,7 +24,7 @@
     "tech": ["js", "css"]
   },
   {
-    "title": "BetterRTP - Minecraft Plugin",
+    "title": "BetterRTP - Plugin",
     "description": "A /wild random teleportation plugin for Minecraft using the Spigot API",
     "github": "https://github.com/RonanPlugins/BetterRTP",
     "deployment": "https://www.spigotmc.org/resources/betterrtp.36081/",
