@@ -1,88 +1,176 @@
-import { Form } from '../components/ui/form';
-import { Button } from '../components/ui/button';
-import React, { useCallback, useState } from 'react';
+﻿import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ArrowUpRight, CheckCircle2, Loader2, Send } from "lucide-react";
+import { contactSchema } from "../../shared/contact";
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-
-import ContactArea from '../components/ContactField';
-import { useEffect } from 'react';
-
-//Zod's API for forms
-const formSchema = z.object({
-  name: z.string().min(2, {
-    required_error: 'Name is required',
-    message: 'Name must be atleast 2 characters long.',
-  }),
-  email: z.string().email({
-    required_error: 'Email is required',
-    message: 'Please provide a valid email address.',
-  }),
-  message: z.string().min(5, {
-    message: 'Message is required',
-  }),
-});
-
-const formFields = [
-  {
-    name: 'name',
-    title: 'Name',
-    description: 'Please provide your full name',
-    placeholder: 'John Doe',
-  },
-  {
-    name: 'email',
-    title: 'Email',
-    description: 'Please provide your full name',
-    placeholder: 'joe@email.com',
-  },
-  {
-    name: 'message',
-    title: 'Message',
-    description: 'Reason for your inquiry',
-    type: 'area',
-  },
-];
-
-function Contact() {
-  //Form effect
-  const form = useForm({
-    resolver: zodResolver(formSchema),
-    // defaultValues: {
-    //   name: '',
-    // },
+export default function Contact() {
+  const [status, setStatus] = useState(null);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    resolver: zodResolver(contactSchema),
+    defaultValues: { name: "", email: "", message: "", website: "" },
   });
-
-  //Form Submit Event
-  const onSubmit = (values) => {
-    console.log(values);
-  };
-
-  const resetAsyncForm = useCallback(async () => {
-    console.log('Reset Form!');
-    form.reset(); // asynchronously reset your form values
-  }, [form]);
-
-  useEffect(() => {
-    resetAsyncForm();
-  }, [form.formState, resetAsyncForm, form.reset]);
-
+  async function onSubmit(values) {
+    setStatus(null);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+        signal: AbortSignal.timeout(20000),
+      });
+      const data = await response.json();
+      if (!response.ok || !data.success)
+        throw new Error(
+          data.error ||
+            "Your message could not be sent. Please try again or email me directly.",
+        );
+      setStatus({
+        success: true,
+        message:
+          "Message sent. Thanks for reaching out — I’ll reply to the email you provided.",
+      });
+      reset();
+    } catch (error) {
+      setStatus({
+        success: false,
+        message:
+          error instanceof TypeError ||
+          error.name === "TimeoutError" ||
+          error instanceof SyntaxError
+            ? "We could not confirm your message was sent. Check your connection or email me directly."
+            : error.message,
+      });
+    }
+  }
   return (
-    <Form {...form} className="">
+    <section className="contact-page page-width">
+      <div className="contact-intro">
+        <p className="eyebrow">Let’s connect</p>
+        <h1>
+          Good things start
+          <br />
+          with a conversation.
+        </h1>
+        <p>
+          Have a project, a role, or an interesting problem in mind? Tell me a
+          little about it.
+        </p>
+        <a className="direct-email" href="mailto:superronancraft@gmail.com">
+          superronancraft@gmail.com <ArrowUpRight size={18} />
+        </a>
+        <p className="contact-note">
+          Prefer email? You can reach me directly, too.
+        </p>
+      </div>
       <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="mx-5 md:mx-auto md:w-5/6 space-y-8 px-2 py-2 bg-gray-400 dark:bg-gray-800 border rounded-md"
+        className="contact-form"
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+        aria-busy={isSubmitting}
       >
-        {formFields.map((field, index) => (
-          <ContactArea key={index} {...field} form={form} />
-        ))}
-        <Button type="submit" className="">
-          Submit
-        </Button>
+        <h2>Send me a message</h2>
+        <p className="form-intro">All fields are required.</p>
+        <div className="form-field">
+          <label htmlFor="name">Your name</label>
+          <input
+            id="name"
+            autoComplete="name"
+            placeholder="Alex Morgan"
+            maxLength={100}
+            required
+            {...register("name")}
+            aria-invalid={!!errors.name}
+            aria-describedby={errors.name ? "name-error" : undefined}
+          />
+          {errors.name && (
+            <p id="name-error" className="field-error">
+              {errors.name.message}
+            </p>
+          )}
+        </div>
+        <div className="form-field">
+          <label htmlFor="email">Email address</label>
+          <input
+            id="email"
+            type="email"
+            autoComplete="email"
+            placeholder="alex@example.com"
+            maxLength={254}
+            required
+            {...register("email")}
+            aria-invalid={!!errors.email}
+            aria-describedby={errors.email ? "email-error" : undefined}
+          />
+          {errors.email && (
+            <p id="email-error" className="field-error">
+              {errors.email.message}
+            </p>
+          )}
+        </div>
+        <div className="form-field">
+          <label htmlFor="message">What are you working on?</label>
+          <textarea
+            id="message"
+            rows={6}
+            placeholder="A little about your project, opportunity, or idea…"
+            maxLength={5000}
+            required
+            {...register("message")}
+            aria-invalid={!!errors.message}
+            aria-describedby={errors.message ? "message-error" : "message-hint"}
+          />
+          {errors.message ? (
+            <p id="message-error" className="field-error">
+              {errors.message.message}
+            </p>
+          ) : (
+            <p id="message-hint" className="field-hint">
+              10–5,000 characters.
+            </p>
+          )}
+        </div>
+        <div className="honeypot" aria-hidden="true">
+          <label htmlFor="website">Leave this field empty</label>
+          <input
+            id="website"
+            tabIndex={-1}
+            autoComplete="off"
+            {...register("website")}
+          />
+        </div>
+        <button
+          className="button-primary send-button"
+          type="submit"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? (
+            <>
+              <Loader2 className="spin" size={17} /> Sending…
+            </>
+          ) : (
+            <>
+              Send message <Send size={17} />
+            </>
+          )}
+        </button>
+        <div aria-live="polite" aria-atomic="true">
+          {status && (
+            <p
+              className={`form-status ${status.success ? "success" : "error"}`}
+              role={status.success ? "status" : "alert"}
+            >
+              {status.success && <CheckCircle2 size={19} />}
+              {status.message}
+            </p>
+          )}
+        </div>
       </form>
-    </Form>
+    </section>
   );
 }
-
-export default Contact;

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 export const FrameWrapper = ({ html }) => {
   return (
     <div className="my-2">
@@ -9,4 +10,8 @@ export const FrameWrapper = ({ html }) => {
       ></iframe>
     </div>
   );
+};
+
+FrameWrapper.propTypes = {
+  html: PropTypes.string.isRequired,
 };

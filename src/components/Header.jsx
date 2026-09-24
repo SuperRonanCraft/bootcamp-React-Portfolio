@@ -1,19 +1,34 @@
-import Navigation from './Navigation';
-import { Moon, Sun } from 'lucide-react';
+import PropTypes from "prop-types";
+import { Link, NavLink } from "react-router-dom";
+import { Moon, Sun, ArrowUpRight } from "lucide-react";
 
-function Header({ darkmode, darkModeHandler }) {
+export default function Header({ darkmode, darkModeHandler }) {
   return (
-    <div className="grid grid-cols-3 gap-4 px-4 pt-3 pb-2 content-center bg-gray-200 dark:bg-gray-800">
-      <Navigation />
-      <h1 className="flex justify-center items-center text-nowrap text-center text-lg md:text-2xl font-semibold">
-        My Portfolio
-      </h1>
-      <button className="justify-self-end" onClick={() => darkModeHandler()}>
-        {darkmode && <Moon size={32} />}
-        {!darkmode && <Sun size={32} />}
+    <header className="site-header">
+      <Link to="/" className="wordmark" aria-label="Alain Núñez home">
+        alain<span>.dev</span>
+      </Link>
+      <nav aria-label="Main navigation">
+        <NavLink to="/" end>
+          Work
+        </NavLink>
+        <NavLink to="/resume">Résumé</NavLink>
+        <NavLink to="/contact">
+          Let’s talk <ArrowUpRight size={15} />
+        </NavLink>
+      </nav>
+      <button
+        className="theme-toggle"
+        onClick={darkModeHandler}
+        aria-label={`Switch to ${darkmode ? "light" : "dark"} mode`}
+      >
+        {darkmode ? <Sun size={19} /> : <Moon size={19} />}
       </button>
-    </div>
+    </header>
   );
 }
 
-export default Header;
+Header.propTypes = {
+  darkmode: PropTypes.bool.isRequired,
+  darkModeHandler: PropTypes.func.isRequired,
+};

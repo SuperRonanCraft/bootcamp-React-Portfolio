@@ -1,49 +1,55 @@
 [
   {
     "title": "Minecentral",
-    "description": "An Express/MongoDB RESTful API allowing users to upload their resources and images for others to download and browse their creations",
+    "description": "A resource-sharing platform with an Express/MongoDB REST API for uploading resources and images, browsing creations, and downloading community content.",
     "github": "https://github.com/RonanPlugins/RonanPluginsFrontend",
     "deployment": "https://minecentral.net",
     "image": "ronanplugins.png",
-    "tech": ["mongo", "mysql", "tailwind", "typescript"]
-  },
-  {
-    "title": "Arlington Food Shelf",
-    "description": "An Express and SQL webapp to manage food inventory and allow online shopping/orders for customers",
-    "github": "https://github.com/SuperRonanCraft/bootcamp-Arlington-Food-Shelf",
-    "deployment": "https://bootcamp-arlington-food-shelf.onrender.com/",
-    "image": "arlingtonfoodshelf.png",
-    "tech": ["mongo", "mysql", "bootstrap"]
-  },
-  {
-    "title": "Weather App",
-    "description": "A simple Weather fetching webapp using the OpenWeatherMap API",
-    "github": "https://github.com/SuperRonanCraft/bootcamp-Weather-Dashboard",
-    "deployment": "https://superronancraft.github.io/bootcamp-Weather-Dashboard/",
-    "image": "weather.png",
-    "tech": ["js", "css"]
+    "tech": ["express", "mongo", "mysql", "tailwind", "typescript"],
+    "category": "Web applications"
   },
   {
     "title": "BetterRTP - Plugin",
-    "description": "A /wild random teleportation plugin for Minecraft using the Spigot API",
+    "description": "A Java plugin that brings random teleportation to Minecraft servers through the Spigot API. Built with Maven and published on SpigotMC.",
     "github": "https://github.com/RonanPlugins/BetterRTP",
     "deployment": "https://www.spigotmc.org/resources/betterrtp.36081/",
     "image": "rtp.png",
-    "tech": ["java", "maven"]
+    "tech": ["java", "maven"],
+    "category": "Plugins & tools"
   },
   {
-    "title": "Exmployee Tracker",
-    "description": "A simple terminal based Employee tracker with relational SQL database",
+    "title": "Arlington Food Shelf",
+    "description": "A food shelf application connecting inventory management with online shopping and customer orders, built with Express and a SQL database.",
+    "github": "https://github.com/SuperRonanCraft/bootcamp-Arlington-Food-Shelf",
+    "deployment": "https://bootcamp-arlington-food-shelf.onrender.com/",
+    "image": "arlingtonfoodshelf.png",
+    "tech": ["express", "mysql", "bootstrap"],
+    "category": "Web applications"
+  },
+  {
+    "title": "Employee Tracker",
+    "description": "A command-line application for managing employee records in a relational PostgreSQL database using Node.js.",
     "github": "https://github.com/SuperRonanCraft/bootcamp-Employee-Tracker",
     "image": "etracker.png",
-    "tech": ["js", "node", "npm", "postgres"]
+    "tech": ["js", "node", "postgres"],
+    "category": "Plugins & tools"
+  },
+  {
+    "title": "Weather App",
+    "description": "A weather dashboard that turns OpenWeatherMap API data into a city-based forecast interface.",
+    "github": "https://github.com/SuperRonanCraft/bootcamp-Weather-Dashboard",
+    "deployment": "https://superronancraft.github.io/bootcamp-Weather-Dashboard/",
+    "image": "weather.png",
+    "tech": ["js", "css", "html"],
+    "category": "Web applications"
   },
   {
     "title": "Movie Mania",
-    "description": "A small Movie title search engine",
+    "description": "A movie search application that lets visitors explore titles through a dedicated search interface.",
     "github": "https://github.com/SuperRonanCraft/bootcamp-project-1",
     "deployment": "https://superronancraft.github.io/bootcamp-project-1/",
     "image": "moviemania.png",
-    "tech": ["css", "html", "node"]
+    "tech": ["css", "html", "node"],
+    "category": "Web applications"
   }
 ]

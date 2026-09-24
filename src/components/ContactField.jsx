@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import {
   FormField,
   FormItem,
@@ -5,21 +6,18 @@ import {
   FormDescription,
   FormMessage,
   FormLabel,
-} from './ui/form';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
+} from "./ui/form";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
 
 function ContactArea(props) {
   // console.log(url, link);
-  return props.type !== 'area' ? Field(props) : Text(props);
+  return props.type !== "area" ? Field(props) : Text(props);
 }
-
-// eslint-disable-next-line react/prop-types
 function Field({ form, name, title, placeholder, description }) {
   // console.log(url, link);
   return (
     <FormField
-      // eslint-disable-next-line react/prop-types
       control={form.control}
       name={name}
       render={({ field }) => (
@@ -42,7 +40,6 @@ function Text({ form, name, title, placeholder, description }) {
   // console.log(url, link);
   return (
     <FormField
-      // eslint-disable-next-line react/prop-types
       control={form.control}
       name={name}
       render={({ field }) => (
@@ -62,3 +59,23 @@ function Text({ form, name, title, placeholder, description }) {
 }
 
 export default ContactArea;
+
+ContactArea.propTypes = {
+  type: PropTypes.string,
+};
+
+Field.propTypes = {
+  form: PropTypes.shape({ control: PropTypes.object.isRequired }).isRequired,
+  name: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  placeholder: PropTypes.string,
+  description: PropTypes.string,
+};
+
+Text.propTypes = {
+  form: PropTypes.shape({ control: PropTypes.object.isRequired }).isRequired,
+  name: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  placeholder: PropTypes.string,
+  description: PropTypes.string,
+};

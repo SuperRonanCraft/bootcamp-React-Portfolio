@@ -1,16 +1,18 @@
-import { Github, Linkedin } from 'lucide-react';
+﻿import { Github, Linkedin, ArrowUpRight } from "lucide-react";
 export default function Footer() {
   return (
-    <footer className="flex justify-center bg-gray-200 dark:bg-gray-800 py-2">
-      <a className="px-2" href="https://www.linkedin.com/in/alain-nunez/">
-        <Linkedin size={32} className="hover:text-red-500" />
-      </a>
-      <a
-        className="px-2"
-        href="https://github.com/SuperRonanCraft?tab=repositories"
-      >
-        <Github size={32} className="hover:text-red-500" />
-      </a>
+    <footer className="site-footer">
+      <p>
+        Alain Núñez <span> / Full stack developer</span>
+      </p>
+      <div>
+        <a href="https://github.com/SuperRonanCraft">
+          <Github size={16} /> GitHub <ArrowUpRight size={14} />
+        </a>
+        <a href="https://www.linkedin.com/in/alain-nunez/">
+          <Linkedin size={16} /> LinkedIn <ArrowUpRight size={14} />
+        </a>
+      </div>
     </footer>
   );
 }

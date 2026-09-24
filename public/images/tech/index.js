@@ -63,11 +63,11 @@ export default [
   {
     id: "node",
     url: "nodejs.svg",
-    name: "Node.JS",
+    name: "Node.js",
   },
   { id: "npm", url: "npm.svg", name: "NPM" },
   { id: "postgres", url: "postgresql.svg", name: "PostgreSQL" },
-  { id: "react", url: "react.svg", name: "React Native" },
+  { id: "react", url: "react.svg", name: "React" },
   { id: "tailwind", url: "tailwind.svg", name: "Tailwind CSS" },
   {
     id: "vite",
@@ -77,6 +77,6 @@ export default [
   {
     id: "typescript",
     url: "typescript.svg",
-    name: "Typescript",
+    name: "TypeScript",
   },
 ];
